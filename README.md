@@ -78,7 +78,7 @@ docker-compose exec php-fpm  php artisan db:seed
 ```
 
 ```
-docker-compose exec php-fpm composer require "darkaonline/l5-swagger
+docker-compose exec php-fpm composer require darkaonline/l5-swagger
 docker-compose exec php-fpm php artisan l5-swagger:generate
 ```
 Access the API!
