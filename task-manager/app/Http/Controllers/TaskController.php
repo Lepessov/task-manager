@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRequest;
 use App\Http\Requests\TaskIndexRequest;
+use App\Http\Requests\UpdateTaskRequest;
 use App\Http\Resources\PriorityTaskResource;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
-use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 /**
@@ -143,7 +143,7 @@ class TaskController extends Controller
      *                  @OA\Property(property="description", type="string", example="Updated task description."),
      *                  @OA\Property(property="status", type="string", enum={"TODO", "IN_PROGRESS", "COMPLETED"}, example="IN_PROGRESS"),
      *                  @OA\Property(property="importance", type="integer", example=4, minimum=1, maximum=5),
-     *                  @OA\Property(property="deadline", type="string", format="date-time", example="2024-12-01T12:00:00Z")
+     *                  @OA\Property(property="deadline", type="string", format="date-time", example="2024-12-01 12:00:00")
      *              }
      *          )
      *      ),
@@ -157,7 +157,7 @@ class TaskController extends Controller
      *     )
      * )
      */
-    public function edit(Request $request, $id)
+    public function edit(UpdateTaskRequest $request, $id)
     {
         $task = Task::find($id);
 
@@ -167,7 +167,7 @@ class TaskController extends Controller
             ], ResponseAlias::HTTP_NOT_FOUND);
         }
 
-        $task->update($request->all());
+        $task->update($request->validated());
 
         return new TaskResource($task);
     }

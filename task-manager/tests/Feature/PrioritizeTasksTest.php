@@ -22,7 +22,7 @@ class PrioritizeTasksTest extends TestCase
             'description' => 'Task 1 description',
             'status' => 'TODO',
             'importance' => 3,
-            'deadline' => now()->addDays(5), // 5 days until deadline
+            'deadline' => now()->addDays(5),
         ]);
 
         $task2 = Task::create([
@@ -30,7 +30,7 @@ class PrioritizeTasksTest extends TestCase
             'description' => 'Task 2 description',
             'status' => 'TODO',
             'importance' => 5,
-            'deadline' => now()->addDays(3), // 3 days until deadline
+            'deadline' => now()->addDays(3),
         ]);
 
         $task3 = Task::create([
@@ -38,7 +38,7 @@ class PrioritizeTasksTest extends TestCase
             'description' => 'Task 3 description',
             'status' => 'TODO',
             'importance' => 4,
-            'deadline' => now()->addDays(7), // 7 days until deadline
+            'deadline' => now()->addDays(7),
         ]);
 
         $response = $this->getJson('/api/tasks/priority');
@@ -48,8 +48,8 @@ class PrioritizeTasksTest extends TestCase
         $tasks = $response->json('data');
 
 
-        $this->assertEquals($task2->id, $tasks[0]['id']); // Task 2 should have the highest priority
-        $this->assertEquals($task1->id, $tasks[1]['id']); // Task 3 should come next
-        $this->assertEquals($task3->id, $tasks[2]['id']); // Task 1 should have the lowest priority
+        $this->assertEquals($task2->id, $tasks[0]['id']);
+        $this->assertEquals($task1->id, $tasks[1]['id']);
+        $this->assertEquals($task3->id, $tasks[2]['id']);
     }
 }
