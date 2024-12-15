@@ -37,8 +37,8 @@ Clone the repository:
 bash
 Copy code
 ```
-git clone https://github.com/your-username/task-manager-api.git
-cd task-manager-api
+git clone https://github.com/Lepessov/task-manager.git
+cd task-manager
 ```
 Start the Docker containers:
 
