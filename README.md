@@ -58,6 +58,11 @@ Copy code
 cp .env.example .env
 ```
 
+run composer install
+```
+docker-compose exec php-fpm composer install 
+```
+
 Run the database migrations:
 
 To create the necessary tables, run:
