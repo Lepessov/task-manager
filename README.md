@@ -1,24 +1,26 @@
-#Task Manager REST API
+# Task Manager REST API
 This project provides a REST API for managing a task list with prioritization functionality based on importance and deadlines. Built with Laravel 10+, MySQL/PostgreSQL, and Swagger for API documentation.
 
-##Features
-CRUD operations for tasks
-Prioritization endpoint that returns tasks ordered by priority (calculated using importance and deadline)
-Database schema is created with migrations
-Form Request Validation for input validation
-API Resource to format responses
-Basic error handling
-API documentation with Swagger
-Test for prioritization logic
-Tech Stack
-Laravel 10+
-MySQL/PostgreSQL
-Swagger for API documentation
-PHP 8.2 with Docker
-Nginx for serving the application
-Installation
-Prerequisites
-Before you start, ensure you have the following installed:
+## Features
+- CRUD operations for managing tasks
+- Prioritization endpoint that returns tasks ordered by priority (calculated using importance and deadline)
+- Database schema managed through migrations
+- Form request validation for input validation
+- API resources for consistent response formatting
+- Basic error handling
+- API documentation generated with Swagger
+- Unit tests for prioritization logic
+## Tech Stack
+- Laravel 10+
+- MySQL or PostgreSQL
+- Swagger for API documentation
+- PHP 8.2 with Docker
+- Nginx for serving the application
+  
+## Installation
+
+### Prerequisites
+Before you begin, ensure the following dependencies are installed:
 
 ## Docker and Docker Compose
 Git
